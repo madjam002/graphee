@@ -1,0 +1,28 @@
+{
+  "name": "graphee",
+  "version": "0.0.1",
+  "description": "Database agnostic GraphQL mapping backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madjam002/graphee.git"
+  },
+  "keywords": [
+    "graphql",
+    "database",
+    "api"
+  ],
+  "author": "Jamie Greeff <jamiegreeff+git@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madjam002/graphee/issues"
+  },
+  "homepage": "https://github.com/madjam002/graphee",
+  "dependencies": {
+    "graphqlite": "1.0.0",
+    "lodash": "^3.5.0"
+  }
+}
