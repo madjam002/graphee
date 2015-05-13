@@ -1,0 +1,23 @@
+{
+  "name": "graphee-web",
+  "version": "0.0.1",
+  "description": "Graphee Website",
+  "main": "bundle.js",
+  "dependencies": {
+    "codemirror": "^5.2.0",
+    "lodash": "^3.8.0",
+    "react": "^0.13.1",
+    "react-code-mirror": "^3.0.4"
+  },
+  "devDependencies": {
+    "babel-runtime": "^5.3.1",
+    "babelify": "^6.0.2",
+    "watchify": "^2.4.0"
+  },
+  "private": true,
+  "scripts": {
+    "watch": "watchify -v -t [ babelify --stage 0 --optional runtime ] js/app.js -o bundle.js"
+  },
+  "author": "Jamie Greeff <jamiegreeff+git@gmail.com>",
+  "license": "MIT"
+}
