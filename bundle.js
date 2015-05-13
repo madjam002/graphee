@@ -132,8 +132,8 @@ var Example = (function (_React$Component) {
                 while (1) switch (context$3$0.prev = context$3$0.next) {
                   case 0:
                     response = {};
-                    context$3$0.t42 = def.type;
-                    context$3$0.next = context$3$0.t42 === 'user' ? 4 : 9;
+                    context$3$0.t45 = def.type;
+                    context$3$0.next = context$3$0.t45 === 'user' ? 4 : 9;
                     break;
 
                   case 4:
@@ -247,6 +247,16 @@ var Example = (function (_React$Component) {
           'button',
           { style: styles.button, onClick: this.submit.bind(this), className: 'btn btn-lg btn-primary btn-block' },
           'Submit (Shift+Enter)'
+        ),
+        _react2['default'].createElement(
+          'p',
+          { className: 'text-center' },
+          'View the contents of the database at ',
+          _react2['default'].createElement(
+            'a',
+            { href: 'https://raw.githubusercontent.com/madjam002/graphee/gh-pages/js/db.js', target: '_blank' },
+            'https://raw.githubusercontent.com/madjam002/graphee/gh-pages/js/db.js'
+          )
         )
       );
     }

@@ -95,6 +95,10 @@ export default class Example extends React.Component {
         <br />
 
         <button style={styles.button} onClick={this.submit.bind(this)} className="btn btn-lg btn-primary btn-block">Submit (Shift+Enter)</button>
+
+        <p className="text-center">
+          View the contents of the database at <a href="https://raw.githubusercontent.com/madjam002/graphee/gh-pages/js/db.js" target="_blank">https://raw.githubusercontent.com/madjam002/graphee/gh-pages/js/db.js</a>
+        </p>
       </div>
     )
   }
