@@ -66,7 +66,7 @@ export default class Mapper {
     }
 
     // built in mappers
-    if (_.isFunction(mapping) && !mapping.name) {
+    if (_.isFunction(mapping) && (field === 'name' || (field !== 'name' && !mapping.name))) {
       // simple callback (not a constructor though)
       currentValue = await mapping(node)
     } else if (_.isString(mapping)) {
@@ -120,17 +120,17 @@ export default class Mapper {
       } else if (options.fields && _.isArray(object[field])) {
         // generic array of objects
         resultCursor[field] = []
-        promises.push(object[field].map((subObject, i) => {
+        object[field].forEach((subObject, i) => {
           resultCursor[field][i] = {}
 
           if (subObject instanceof Node) {
             // sub object is Node
-            return this.mapNode(subObject, resultCursor[field][i], options)
+            promises.push(this.mapNode(subObject, resultCursor[field][i], options))
           } else {
             // sub object is generic object
-            return this.mapObject(subObject, resultCursor[field][i], options)
+            promises.push(this.mapObject(subObject, resultCursor[field][i], options))
           }
-        }))
+        })
       }
     }
 
