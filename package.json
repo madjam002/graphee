@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/madjam002/graphee",
   "dependencies": {
-    "graphqlite": "1.0.0",
+    "graphqlite": "^1.3.0",
     "lodash": "^3.5.0"
   },
   "devDependencies": {
