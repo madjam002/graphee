@@ -23,6 +23,20 @@ export default class Mapper {
         // Node
         this.result[field] = {}
         promises.push(this.mapNode(object[field], this.result[field], definition))
+      } else if (_.isArray(object[field])) {
+        // generic array of objects
+        this.result[field] = []
+        object[field].forEach((subObject, i) => {
+          this.result[field][i] = {}
+
+          if (subObject instanceof Node) {
+            // sub object is Node
+            promises.push(this.mapNode(subObject, this.result[field][i], definition))
+          } else {
+            // sub object is generic object
+            promises.push(this.mapObject(subObject, this.result[field][i], definition))
+          }
+        })
       }
     }
 
