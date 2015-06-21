@@ -105,17 +105,20 @@ export default class Mapper {
     }
 
     // call edge callback and parse result
-    let result = await mapping.callback(node, definition)
+    let result = await mapping.callback(node, definition, this.request)
 
     resultCursor[field] = _.isArray(result) ? [] : {}
 
-    await this.mapObject(result, resultCursor[field], definition)
+    if (result)
+      await this.mapObject(result, resultCursor[field], definition)
   }
 
   // Maps a plain object which can contain anything.
   // If a {Node} is found, then it will be mapped accordingly.
   async mapObject(object, resultCursor, definition) {
     let promises = []
+
+    if (!object) return Promise.all([])
 
     for (let field in definition.fields) {
       let options = definition.fields[field]
